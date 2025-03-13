@@ -10,6 +10,7 @@ public class Goods {
     @JoinColumn(name = "business_id",nullable = false)
     private Business business;
     private Integer quantity;
+    private Integer unit_price;
 
 
 }

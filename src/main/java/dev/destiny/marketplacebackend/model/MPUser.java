@@ -11,12 +11,33 @@ public class MPUser {
     String email;
     String password;
     UserRole role;
+    @OneToOne(mappedBy = "provider",cascade = CascadeType.ALL)
+    private Service service;
+    @OneToOne(mappedBy = "owner",cascade = CascadeType.ALL)
+    private Business business;
+
 
     public MPUser() {
     }
 
     public UserRole getRole() {
         return role;
+    }
+
+    public Service getService() {
+        return service;
+    }
+
+    public void setService(Service service) {
+        this.service = service;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void setRole(UserRole role) {

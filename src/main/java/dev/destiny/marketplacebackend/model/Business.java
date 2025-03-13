@@ -18,4 +18,7 @@ public class Business {
     private String description;
     @OneToMany(mappedBy = "business",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private Set<Goods> goods;
+    @OneToOne
+    @JoinColumn(name = "business_owner",nullable = false)
+    private MPUser owner;
 }
