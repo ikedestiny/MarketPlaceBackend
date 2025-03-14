@@ -9,10 +9,22 @@ public class Goods {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "business_id",nullable = false)
     private Business business;
+    @Column(nullable = false)
     private Integer quantity;
+    @Column(nullable = false)
+    private String name;
+    @Column(nullable = false)
     private Integer unit_price;
 
     public Goods() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getId() {

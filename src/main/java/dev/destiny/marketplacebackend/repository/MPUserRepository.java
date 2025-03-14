@@ -8,9 +8,12 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface MPUserRepository extends JpaRepository<MPUser,String> {
     @Query("SELECT u FROM MPUser u WHERE u.role = :role")
     List<MPUser> findByRole(@Param("role") UserRole role);
+
+    Optional<MPUser> findByUsername(String username);
 }
