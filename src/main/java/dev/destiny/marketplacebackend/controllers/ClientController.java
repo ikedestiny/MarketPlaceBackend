@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ClientController {
 
     @GetMapping("/profile")
-    @PreAuthorize("hasRole('CLIENT')")
+    @PreAuthorize("hasAnyRole('CLIENT','ADMIN','BUSINESS_OWNER','SERVICE_PROVIDER')")
     public String clientProfile() {
         return "Welcome to the Client Profile";
     }

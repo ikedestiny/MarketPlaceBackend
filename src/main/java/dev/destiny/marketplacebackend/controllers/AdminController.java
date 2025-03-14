@@ -13,4 +13,5 @@ public class AdminController {
     public String adminDashboard() {
         return "Welcome to the Admin Dashboard";
     }
+
 }

@@ -16,4 +16,6 @@ public interface MPUserRepository extends JpaRepository<MPUser,String> {
     List<MPUser> findByRole(@Param("role") UserRole role);
 
     Optional<MPUser> findByUsername(String username);
+
+    Optional<MPUser> findByEmail(String email);
 }

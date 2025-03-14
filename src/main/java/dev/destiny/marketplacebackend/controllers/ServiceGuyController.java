@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/service")
 public class ServiceGuyController {
     @GetMapping("/profile")
-    @PreAuthorize("hasRole('SERVICE_PROVIDER')")
+    @PreAuthorize("hasAnyRole('SERVICE_PROVIDER','ADMIN')")
     public String serviceProfile() {
         return "Welcome to the service Profile";
     }

@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 public class Service {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Integer id;
     private ServiceType type;
     @OneToOne
     @JoinColumn(name = "provider_id",nullable = false)
@@ -16,11 +16,11 @@ public class Service {
     public Service() {
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

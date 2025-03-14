@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 @Entity
 public class Goods {
     @Id
-    private String id;
+    private Integer id;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "business_id",nullable = false)
     private Business business;
@@ -27,11 +27,11 @@ public class Goods {
         this.name = name;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

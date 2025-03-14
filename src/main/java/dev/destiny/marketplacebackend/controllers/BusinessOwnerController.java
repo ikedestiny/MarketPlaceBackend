@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/business")
 public class BusinessOwnerController {
     @GetMapping("/profile")
-    @PreAuthorize("hasRole('BUSINESS_OWNER')")
+    @PreAuthorize("hasAnyRole('BUSINESS_OWNER','ADMIN')")
     public String businessProfile() {
         return "Welcome to the Admin Dashboard";
     }
