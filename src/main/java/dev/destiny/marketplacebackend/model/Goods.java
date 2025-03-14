@@ -12,5 +12,38 @@ public class Goods {
     private Integer quantity;
     private Integer unit_price;
 
+    public Goods() {
+    }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Business getBusiness() {
+        return business;
+    }
+
+    public void setBusiness(Business business) {
+        this.business = business;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public Integer getUnit_price() {
+        return unit_price;
+    }
+
+    public void setUnit_price(Integer unit_price) {
+        this.unit_price = unit_price;
+    }
 }

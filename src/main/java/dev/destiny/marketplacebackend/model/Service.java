@@ -8,7 +8,6 @@ public class Service {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private ServiceType type;
-
     @OneToOne
     @JoinColumn(name = "provider_id",nullable = false)
     private MPUser provider;
