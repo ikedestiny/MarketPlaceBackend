@@ -16,6 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MPUserService implements UserDetailsService {
@@ -64,5 +65,17 @@ public class MPUserService implements UserDetailsService {
                 .password(user.getPassword())
                 .authorities("ROLE_" + user.getRole().name())
                 .build();
+    }
+
+    public Optional<MPUser> findUserById(Integer id){
+        return user_repo.findById(id);
+    }
+
+    public String deleteById(Integer id) {
+        if (user_repo.findById(id).isPresent()){
+            user_repo.deleteById(id);
+            return "user successfully deleted";
+        }
+        return null;
     }
 }

@@ -24,15 +24,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/authenticate")
 public class AuthController {
-
     private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
-
     @Autowired
     private AuthenticationManager authenticationManager;
-
     @Autowired
     private MPUserService mpUserService;
-
     @Autowired
     private JwtUtil jwtUtil;
 

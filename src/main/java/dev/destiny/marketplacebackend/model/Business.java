@@ -13,8 +13,6 @@ public class Business {
     @Column(unique = true, nullable = false)
     private String name;
     private String address;
-    @Column(unique = true, nullable = false)
-    private String email;
     private String description;
     @OneToMany(mappedBy = "business",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private Set<Goods> goods;
@@ -47,14 +45,6 @@ public class Business {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getDescription() {

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BusinessService {
@@ -18,7 +19,11 @@ public class BusinessService {
     public Business create_new_business(Business business){
         return biz_repo.save(business);
     }
-    public void close_business(String id){
+    public void close_business(Integer id){
          biz_repo.deleteById(id);
+    }
+
+    public Optional<Business> findBusinessById(Integer businessId) {
+        return biz_repo.findById(businessId);
     }
 }

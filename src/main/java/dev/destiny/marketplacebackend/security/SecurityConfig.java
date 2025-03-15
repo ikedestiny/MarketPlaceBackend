@@ -1,5 +1,7 @@
 package dev.destiny.marketplacebackend.security;
 
+import dev.destiny.marketplacebackend.exception.CustomAccessDeniedHandler;
+import dev.destiny.marketplacebackend.exception.CustomAuthenticationEntryPoint;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -34,6 +36,10 @@ public class SecurityConfig {
                         .requestMatchers("/business/**").hasRole("BUSINESS_OWNER")
                         .requestMatchers("/service/**").hasRole("SERVICE_PROVIDER")
                         .anyRequest().authenticated()
+                )
+                .exceptionHandling(ex ->ex
+                        .authenticationEntryPoint(new CustomAuthenticationEntryPoint())
+                        .accessDeniedHandler(new CustomAccessDeniedHandler())
                 )
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)

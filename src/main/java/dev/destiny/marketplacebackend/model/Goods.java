@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 @Entity
 public class Goods {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "business_id",nullable = false)
